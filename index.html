@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Digital</title>
+
+  <!-- IMPORT SEMUA FONT GOOGLE SEKALIGUS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alex+Brush&family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Bodoni+Moda:wght@400;700&family=Cardo:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Comfortaa:wght@400;600&family=Cormorant+Garamond:wght@400;600;700&family=Cormorant:wght@400;600&family=Crimson+Text:wght@400;600&family=Dancing+Script:wght@400;700&family=DM+Sans:wght@400;500&family=DM+Serif+Display&family=EB+Garamond:wght@400;600&family=Elsie:wght@400;900&family=Fredoka:wght@400;600&family=GFS+Didot&family=Great+Vibes&family=Hind:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Inter:wght@400;500;600&family=Josefin+Sans:wght@400;600&family=Jost:wght@400;500;600&family=Kaushan+Script&family=Lexend:wght@400;500;600&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;600&family=Manrope:wght@400;600&family=Merriweather:wght@400;700&family=Mea+Culpa&family=Montserrat:wght@400;500&family=Mulish:wght@400;600&family=Niconne&family=Noto+Sans:wght@400;500&family=Nunito:wght@400;600&family=Old+Standard+TT:wght@400;700&family=Open+Sans:wght@400;600&family=Oranienbaum&family=Oswald:wght@400;600&family=Outfit:wght@400;500;600&family=Pacifico&family=Parisienne&family=Playfair+Display+SC:wght@400;700&family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500&family=Poppins:wght@300;400;500;600&family=Prata&family=Prompt:wght@400;500;600&family=Quicksand:wght@400;600&family=Raleway:wght@400;500&family=Rethink+Sans:wght@400;500&family=Roboto:wght@400;500&family=Sacramento&family=Sora:wght@400;600&family=Source+Sans+3:wght@400;600&family=Space+Grotesk:wght@400;500&family=Spectral:wght@400;600&family=Tangerine:wght@400;700&family=Ubuntu:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* GANTI ANGKA INI UNTUK GANTI TEMPLATE. 1-20 = STANDAR, 21-40 = PREMIUM */
+      --theme: 21; 
+
+      /* DEFAULT */
+      --bg: #FAF8F6; --text: #2E2E2E; --accent: #C9A961;
+      --font-title: 'Playfair Display', serif; --font-body: 'Inter', sans-serif;
+    }
+
+    /* 20 TEMPLATE STANDAR */
+    [data-theme="1"] { --bg:#FAF8F6; --text:#2E2E2E; --accent:#C9A961; --font-title:'Playfair Display',serif; --font-body:'Inter',sans-serif; } /* Ivory Classic */
+    [data-theme="2"] { --bg:#FFF5F7; --text:#6D4C41; --accent:#B76E79; --font-title:'Great Vibes',cursive; --font-body:'Poppins',sans-serif; } /* Blush Romance */
+    [data-theme="3"] { --bg:#F4F1EA; --text:#3E3E3E; --accent:#7A8C7B; --font-title:'Cormorant Garamond',serif; --font-body:'Montserrat',sans-serif; } /* Sage Minimalis */
+    [data-theme="4"] { --bg:#F0F4F8; --text:#1E2A47; --accent:#D4AF37; --font-title:'Cinzel',serif; --font-body:'Lato',sans-serif; } /* Navy Elegan */
+    [data-theme="5"] { --bg:#F7FAFC; --text:#4B5D67; --accent:#7D9D9C; --font-title:'Libre Baskerville',serif; --font-body:'Open Sans',sans-serif; } /* Dusty Blue */
+    [data-theme="6"] { --bg:#FFF1E6; --text:#5C3A29; --accent:#D98258; --font-title:'DM Serif Display',serif; --font-body:'Source Sans 3',sans-serif; } /* Terracotta Hangat */
+    [data-theme="7"] { --bg:#FAF5FF; --text:#4C4B63; --accent:#A78BFA; --font-title:'Dancing Script',cursive; --font-body:'Nunito',sans-serif; } /* Lavender Soft */
+    [data-theme="8"] { --bg:#F0FDF4; --text:#166534; --accent:#86EFAC; --font-title:'Quicksand',sans-serif; --font-body:'Raleway',sans-serif; } /* Mint Fresh */
+    [data-theme="9"] { --bg:#FFF7ED; --text:#7C2D12; --accent:#FB923C; --font-title:'Sacramento',cursive; --font-body:'Work Sans',sans-serif; } /* Peach Manis */
+    [data-theme="10"] { --bg:#F5F5F5; --text:#1F2937; --accent:#9CA3AF; --font-title:'Oswald',sans-serif; --font-body:'Roboto',sans-serif; } /* Grey Monokrom */
+    [data-theme="11"] { --bg:#ECFDF5; --text:#065F46; --accent:#A3B18A; --font-title:'Merriweather',serif; --font-body:'Mulish',sans-serif; } /* Green Forest */
+    [data-theme="12"] { --bg:#FEF2F2; --text:#991B1B; --accent:#FBBF24; --font-title:'Prata',serif; --font-body:'Ubuntu',sans-serif; } /* Maroon Mewah */
+    [data-theme="13"] { --bg:#FFF1F2; --text:#9D174D; --accent:#F9A8D4; --font-title:'Pacifico',cursive; --font-body:'Comfortaa',sans-serif; } /* Baby Pink */
+    [data-theme="14"] { --bg:#EFF6FF; --text:#1E3A8A; --accent:#3B82F6; --font-title:'Bebas Neue',sans-serif; --font-body:'Poppins',sans-serif; } /* Blue Jeans */
+    [data-theme="15"] { --bg:#FFFBEB; --text:#92400E; --accent:#FCD34D; --font-title:'Alex Brush',cursive; --font-body:'Jost',sans-serif; } /* Cream Gold */
+    [data-theme="16"] { --bg:#FAF9F7; --text:#44403C; --accent:#A8A29E; --font-title:'Cardo',serif; --font-body:'Space Grotesk',sans-serif; } /* Taupe Netral */
+    [data-theme="17"] { --bg:#FFF1F2; --text:#BE123C; --accent:#F87171; --font-title:'Fredoka',sans-serif; --font-body:'Manrope',sans-serif; } /* Coral Ceria */
+    [data-theme="18"] { --bg:#F0F9FF; --text:#075985; --accent:#0EA5E9; --font-title:'Josefin Sans',sans-serif; --font-body:'Noto Sans',sans-serif; } /* Sky Biru Muda */
+    [data-theme="19"] { --bg:#F7FEE7; --text:#3F3F46; --accent:#84CC16; --font-title:'Amatic SC',cursive; --font-body:'Cabin',sans-serif; } /* Olive Rustic */
+    [data-theme="20"] { --bg:#FFFFFF; --text:#111827; --accent:#E5E7EB; --font-title:'Bodoni Moda',serif; --font-body:'Inter',sans-serif; } /* Putih Tulip */
+
+    /* 20 TEMPLATE PREMIUM */
+    [data-theme="21"] { --bg:#0A1F1A; --text:#FFFFFF; --accent:#D4AF37; --font-title:'Cinzel',serif; --font-body:'Montserrat',sans-serif; } /* Royal Emerald */
+    [data-theme="22"] { --bg:#FDF6E3; --text:#5C4B3A; --accent:#BFA181; --font-title:'Cormorant',serif; --font-body:'DM Sans',sans-serif; } /* Champagne Pearl */
+    [data-theme="23"] { --bg:#0B0B0B; --text:#FFFFFF; --accent:#FFD700; --font-title:'Playfair Display',serif; --font-body:'Poppins',sans-serif; } /* Black Gold */
+    [data-theme="24"] { --bg:#FFF0F5; --text:#6D4C41; --accent:#B76E79; --font-title:'Parisienne',cursive; --font-body:'Lora',serif; } /* Rose Gold Blush */
+    [data-theme="25"] { --bg:#0F172A; --text:#FFFFFF; --accent:#60A5FA; --font-title:'Oranienbaum',serif; --font-body:'Prompt',sans-serif; } /* Sapphire Night */
+    [data-theme="26"] { --bg:#2A0A0A; --text:#FDE68A; --accent:#C9A961; --font-title:'Cinzel Decorative',serif; --font-body:'Crimson Text',serif; } /* Burgundy Velvet */
+    [data-theme="27"] { --bg:#F8FAFC; --text:#1E293B; --accent:#94A3B8; --font-title:'Abril Fatface',serif; --font-body:'Poppins',sans-serif; } /* Silver Frost */
+    [data-theme="28"] { --bg:#1C1917; --text:#D6CFC7; --accent:#57534E; --font-title:'GFS Didot',serif; --font-body:'Manrope',sans-serif; } /* Mocha Latte */
+    [data-theme="29"] { --bg:#1F1A1D; --text:#EAD6D6; --accent:#A78B9A; --font-title:'Tangerine',cursive; --font-body:'Spectral',serif; } /* Dusty Mauve */
+    [data-theme="30"] { --bg:#052E2B; --text:#FFFFFF; --accent:#99F6E4; --font-title:'Niconne',cursive; --font-body:'Lexend',sans-serif; } /* Jade Royal */
+    [data-theme="31"] { --bg:#FFF1EB; --text:#7C2D12; --accent:#FF8FAB; --font-title:'Allura',cursive; --font-body:'Quicksand',sans-serif; } /* Champagne Pink */
+    [data-theme="32"] { --bg:#020617; --text:#FFFFFF; --accent:#CD7F32; --font-title:'EB Garamond',serif; --font-body:'Barlow',sans-serif; } /* Midnight Navy + Brass */
+    [data-theme="33"] { --bg:#FEFEFE; --text:#4C1D95; --accent:#E9D5FF; --font-title:'Mea Culpa',cursive; --font-body:'Outfit',sans-serif; } /* Pearl White + Lilac */
+    [data-theme="34"] { --bg:#1A1F1A; --text:#FFFFFF; --accent:#D4AF37; --font-title:'Playfair Display SC',serif; --font-body:'Hind',sans-serif; } /* Olive Gold */
+    [data-theme="35"] { --bg:#2C1810; --text:#FDE68A; --accent:#A16207; --font-title:'Old Standard TT',serif; --font-body:'Plus Jakarta Sans',sans-serif; } /* Cognac Cream */
+    [data-theme="36"] { --bg:#1E0E1E; --text:#FFFFFF; --accent:#C0C0C0; --font-title:'Forum',serif; --font-body:'Sora',sans-serif; } /* Plum + Silver */
+    [data-theme="37"] { --bg:#FFFFF0; --text:#134E4A; --accent:#0F766E; --font-title:'Elsie',serif; --font-body:'IBM Plex Sans',sans-serif; } /* Ivory + Teal */
+    [data-theme="38"] { --bg:#1A0F0A; --text:#FED7AA; --accent:#B45309; --font-title:'Kaushan Script',cursive; --font-body:'Inter',sans-serif; } /* Copper Blush */
+    [data-theme="39"] { --bg:#1A0826; --text:#FFFFFF; --accent:#F5D0FE; --font-title:'Cinzel',serif; --font-body:'Rethink Sans',sans-serif; } /* Royal Purple */
+    [data-theme="40"] { --bg:#111827; --text:#FFFFFF; --accent:#F43F5E; --font-title:'Anton',sans-serif; --font-body:'DM Sans',sans-serif; } /* Graphite + Rose */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url('Snapinsta.app_277905917_4755537127906885_2639431880101077013_n_1080.jpg') center/cover fixed; 
+      color: var(--text); 
+      text-align: center; 
+      font-family: var(--font-body);
+      font-weight: 400;
+    }
+    
+    #cover {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('wine-glass-5705718_640.jpg') center/cover;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      color: white; z-index: 999; transition: opacity 1s ease;
+    }
+    #cover h1 { 
+      font-family: var(--font-title);
+      font-size: 2.8rem; 
+      margin-bottom: 10px; 
+      font-weight: 700;
+    }
+    #cover p { font-size: 1.2rem; font-weight: 300; }
+    .btn-buka { 
+      background: var(--accent); 
+      color: var(--bg); 
+      padding: 15px 40px; 
+      border: none; 
+      border-radius: 50px; 
+      font-size: 1.1rem; 
+      cursor: pointer; 
+      font-weight: 500;
+      font-family: var(--font-body);
+      margin-top: 20px;
+    }
+
+    #content { display: none; padding: 40px 20px; max-width: 700px; margin: auto; background: var(--bg); border-radius: 20px; }
+    
+    .foto-mempelai, .foto-profile, .foto-rsvp, .foto { 
+      width: 300px; height: 350px; border-radius: 50%; object-fit: cover; 
+      border: 5px solid var(--accent); margin-bottom: 20px; 
+    }
+    .foto-mempelai { width: 200px; height: 200px; }
+
+    .nama { 
+      font-family: var(--font-title);
+      font-size: 2.5rem; 
+      color: var(--accent); 
+      font-weight: 700; 
+      margin: 10px 0;
+    }
+    .tanggal { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8; font-weight: 300; }
+    .ucapan { font-size: 1rem; line-height: 1.8; margin-bottom: 30px; font-weight: 400; }
+    
+    h2, h3 { 
+      font-family: var(--font-title);
+      color: var(--accent); 
+      font-weight: 700;
+    }
+    
+    .form-container { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .iframe-wrapper { width: 100%; min-height: 1300px; }
+    .iframe-wrapper iframe { width: 100%; height: 1300px; border: none; }
+    .btn-link { display: block; margin-top: 10px; color: var(--accent); font-weight: 500; text-decoration: none; }
+
+    #btn-musik {
+      position: fixed; bottom: 20px; right: 20px; background: var(--accent);
+      color: var(--bg); border: none; width: 50px; height: 50px; border-radius: 50%;
+      font-size: 24px; cursor: pointer; z-index: 1000; display: none;
+    }
+    footer { padding:30px; opacity: 0.8; font-weight: 300; }
+    hr { margin: 40px 0; border: none; border-top: 1px solid var(--accent); opacity: 0.3; }
+  </style>
+</head>
+<body data-theme="21"> <!-- GANTI NOMOR DI SINI JUGA -->
+
+  <div id="cover">
+    <h1>Undangan Pernikahan</h1>
+    <p>Kami mengundang Anda</p>
+    <button class="btn-buka" onclick="bukaUndangan()">Buka Undangan</button>
+  </div>
+
+  <div id="content">
+    <img src="IMG-20260822-WA0051.jpg" alt="Foto Mempelai" class="foto-mempelai">
+    <h2 class="nama">Andi & Sinta</h2>
+    <p class="tanggal">Minggu, 29 November 2026</p>
+    <p class="ucapan">Dengan memohon rahmat Allah SWT, <br> kami mengundang Bapak/Ibu/Saudara/i <br> untuk hadir di acara pernikahan kami.</p>
+    <hr>
+
+    <h3>Lokasi Acara</h3>
+    <p>Geduh Banjar Converter Hall<br>Makassar</p>
+    <hr>
+
+    <img src="IMG-20260822-WA0045.jpg" alt="Foto" class="foto">
+
+    <h3>Ayat Al-Qur'an</h3>
+    <p>وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ ۝٢١ <br>Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya.</p>
+    <p><br>(Al-Qur'an Surah Ar-Rum ayat 21)</p>
+    <hr>
+
+    <img src="IMG-20260822-WA0050.jpg" alt="Foto Profile" class="foto-profile">
+
+    <h3>Profile Pengantin</h3>
+    <p>Profile Mempelai Pria<br>Nama Lengkap<br>Putra dari Bapak & Ibu</p>
+    <p>Profile Mempelai Wanita<br>Nama Lengkap<br>Putri dari Bapak & Ibu</p>
+    <hr>
+
+    <img src="IMG-20260822-WA0047.jpg" alt="Foto RSVP" class="foto-rsvp">
+    
+    <h2 style="margin-bottom: 20px;">RSVP Kehadiran</h2>
+    <div class="form-container">
+      <div class="iframe-wrapper">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfwvSaSDbl5eOLO5cM_pOx2OCgB-Vd5IPyX1vqBI_1WmZiFzQ/viewform?embedded=true"></iframe>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwvSaSDbl5eOLO5cM_pOx2OCgB-Vd5IPyX1vqBI_1WmZiFzQ/viewform" target="_blank" class="btn-link">Form tidak muncul? Klik di sini</a>
+    </div>
+    <footer>
+      <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami<br>apabila Bapak/Ibu/Saudara/i berkenan hadir</p>
+      <p>Atas kehadiran dan do’a restunya, kami ucapkan terima kasih</p>
+      <p>wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    </footer>
+  </div>
+
+  <button id="btn-musik" onclick="toggleMusik()">🔊</button>
+  <audio id="musik" loop preload="auto"></audio>
+
+  <script>
+    // OTOMATIS GANTI THEME DARI :ROOT
+    document.body.setAttribute('data-theme', getComputedStyle(document.documentElement).getPropertyValue('--theme').trim());
+
+    let musikNyala = true;
+    const audio = document.getElementById('musik');
+
+    function bukaUndangan() {
+      document.getElementById('cover').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('cover').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+        document.getElementById('btn-musik').style.display = 'block';
+      }, 1000);
+
+      audio.src = "Ten2Five - Hanya Untukmu (Official Music Video) - GP Records128kb.mp3"; 
+      audio.play().catch(error => {
+        console.log("Musik gagal:", error);
+        document.getElementById('btn-musik').innerHTML = "❌";
+      });
+    }
+
+    function toggleMusik() {
+      const btn = document.getElementById('btn-musik');
+      if (musikNyala) { audio.pause(); btn.innerHTML = "🔇"; musikNyala = false; } 
+      else { audio.play(); btn.innerHTML = "🔊"; musikNyala = true; }
+    }
+  </script>
+
+</body>
+</html>
